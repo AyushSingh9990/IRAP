@@ -7,4 +7,4 @@ Disallow: /forgot-password
 Disallow: /reset-password
 Disallow: /verify-email
 Disallow: /verify-email-change
-Sitemap: http://localhost:5173/sitemap.xml
+Sitemap: https://irap-web.vercel.app/sitemap.xml
