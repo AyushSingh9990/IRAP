@@ -30,6 +30,7 @@ import verificationRouter from './routes/verification.routes.js';
 import siteRouter from './routes/site.routes.js';
 import { ApiError } from './utils/ApiError.js';
 import { ApiResponse } from './utils/ApiResponse.js';
+import { ensureVercelDatabaseConnection } from './middlewares/ensureVercelDatabaseConnection.js';
 
 const app = express();
 
@@ -52,6 +53,7 @@ app.use(
   }),
 );
 app.use(verifyRequestOrigin);
+app.use(ensureVercelDatabaseConnection);
 app.use(compression());
 app.use(hpp());
 app.use(cookieParser());

@@ -89,11 +89,12 @@ function scheduleReconnect() {
 async function waitForExistingConnection() {
   try {
     await mongoose.connection.asPromise();
+
     return mongoose.connection.readyState === 1;
   } catch (error) {
     logger.error(
       {
-        error,
+        err: error,
         runtime: IS_VERCEL_RUNTIME ? 'vercel' : 'node',
       },
       'Existing MongoDB connection attempt failed',
@@ -123,6 +124,7 @@ export async function connectDatabase() {
       logger.error(
         {
           databaseRequired: true,
+          runtime: IS_VERCEL_RUNTIME ? 'vercel' : 'node',
         },
         message,
       );
@@ -130,6 +132,7 @@ export async function connectDatabase() {
       logger.warn(
         {
           databaseRequired: false,
+          runtime: IS_VERCEL_RUNTIME ? 'vercel' : 'node',
         },
         message,
       );
@@ -139,8 +142,7 @@ export async function connectDatabase() {
   }
 
   /**
-   * Reuse the current connection while the Node process or Vercel
-   * Function instance remains active.
+   * Reuse an existing MongoDB connection.
    */
   if (mongoose.connection.readyState === 1) {
     clearReconnectTimer();
@@ -148,14 +150,14 @@ export async function connectDatabase() {
   }
 
   /**
-   * Prevent simultaneous requests from starting multiple connections.
+   * Prevent simultaneous requests from opening duplicate connections.
    */
   if (connectionAttempt) {
     return connectionAttempt;
   }
 
   /**
-   * Mongoose may already be reconnecting internally.
+   * Wait when Mongoose is already connecting.
    */
   if (mongoose.connection.readyState === 2) {
     return waitForExistingConnection();
@@ -167,7 +169,7 @@ export async function connectDatabase() {
         dbName: environment.databaseName,
 
         /**
-         * Production indexes should be created through controlled
+         * Production indexes should be managed through controlled
          * migrations or administration scripts.
          */
         autoIndex: !environment.isProduction,
@@ -177,8 +179,8 @@ export async function connectDatabase() {
         socketTimeoutMS: 45000,
 
         /**
-         * Keep the pool smaller in serverless environments because
-         * multiple Vercel Function instances may run simultaneously.
+         * Keep the pool smaller on Vercel because multiple Function
+         * instances may run simultaneously.
          */
         maxPoolSize: IS_VERCEL_RUNTIME ? 5 : 10,
         minPoolSize: 0,
@@ -201,7 +203,7 @@ export async function connectDatabase() {
     } catch (error) {
       logger.error(
         {
-          error,
+          err: error,
           databaseRequired: environment.databaseRequired,
           runtime: IS_VERCEL_RUNTIME ? 'vercel' : 'node',
         },
@@ -211,8 +213,8 @@ export async function connectDatabase() {
       );
 
       /**
-       * On Vercel, this does nothing. A later request will retry.
-       * On a persistent Node server, it schedules a background retry.
+       * On Vercel, scheduleReconnect does nothing.
+       * A later request will attempt the connection again.
        */
       scheduleReconnect();
 
@@ -247,7 +249,7 @@ mongoose.connection.on('disconnected', () => {
 mongoose.connection.on('error', (error) => {
   logger.error(
     {
-      error,
+      err: error,
       runtime: IS_VERCEL_RUNTIME ? 'vercel' : 'node',
     },
     'MongoDB connection error',
@@ -258,7 +260,7 @@ mongoose.connection.on('error', (error) => {
  * Closes MongoDB during shutdown of a persistent Node server.
  *
  * Do not call this after individual Vercel requests. Warm Vercel
- * Function instances should reuse the existing connection.
+ * Function instances should reuse the connection.
  */
 export async function disconnectDatabase() {
   shuttingDown = true;
@@ -268,7 +270,7 @@ export async function disconnectDatabase() {
     try {
       await connectionAttempt;
     } catch {
-      // The connection failure has already been logged.
+      // The connection failure was already logged.
     }
   }
 
