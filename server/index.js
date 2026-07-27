@@ -3,7 +3,7 @@ import { connectDatabase } from './src/config/database.js';
 import { logger } from './src/config/logger.js';
 
 export default async function handler(request, response) {
-  // CORS preflight requests do not require MongoDB.
+  // OPTIONS is only a browser CORS preflight request.
   if (request.method !== 'OPTIONS') {
     const connected = await connectDatabase();
 
