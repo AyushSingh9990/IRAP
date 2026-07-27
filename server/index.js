@@ -3,8 +3,12 @@ import { connectDatabase } from './src/config/database.js';
 import { logger } from './src/config/logger.js';
 
 export default async function handler(request, response) {
-  // OPTIONS is only a browser CORS preflight request.
-  if (request.method !== 'OPTIONS') {
+  // OPTIONS requests are only browser preflight checks.
+  if (request.method === 'OPTIONS') {
+    return app(request, response);
+  }
+
+  try {
     const connected = await connectDatabase();
 
     if (!connected) {
@@ -13,7 +17,7 @@ export default async function handler(request, response) {
           method: request.method,
           path: request.originalUrl || request.url,
         },
-        'Request rejected because MongoDB is unavailable',
+        'MongoDB connection returned unavailable in Vercel',
       );
 
       return response.status(503).json({
@@ -22,7 +26,22 @@ export default async function handler(request, response) {
         errors: [],
       });
     }
-  }
 
-  return app(request, response);
+    return app(request, response);
+  } catch (error) {
+    logger.error(
+      {
+        err: error,
+        method: request.method,
+        path: request.originalUrl || request.url,
+      },
+      'MongoDB connection failed in Vercel',
+    );
+
+    return response.status(503).json({
+      success: false,
+      message: 'The database service is temporarily unavailable.',
+      errors: [],
+    });
+  }
 }
