@@ -1,0 +1,42 @@
+import { defineConfig } from 'vitest/config';
+
+export default defineConfig({
+  test: {
+    environment: 'node',
+    env: {
+      NODE_ENV: 'test',
+      PORT: '5001',
+      CLIENT_URL: 'http://localhost:5173',
+      SERVER_URL: 'http://localhost:5001',
+      DATABASE_REQUIRED: 'false',
+      MONGODB_URI: '',
+      DATABASE_NAME: 'irap_test',
+      AUTH_ENABLED: 'false',
+      APPLICATION_PAYMENT_REQUIRED: 'false',
+      PAYMENTS_ENABLED: 'false',
+      DEFAULT_CURRENCY: 'INR',
+      PAYMENT_DEFAULT_PROVIDER: 'offline',
+      RAZORPAY_ENABLED: 'false',
+      RAZORPAY_KEY_ID: 'rzp_test_public',
+      RAZORPAY_KEY_SECRET: 'unit-test-razorpay-secret',
+      RAZORPAY_WEBHOOK_SECRET: 'unit-test-razorpay-webhook-secret',
+      STRIPE_ENABLED: 'false',
+      STRIPE_PUBLIC_KEY: 'pk_test_placeholder',
+      STRIPE_SECRET_KEY: 'sk_test_placeholder',
+      STRIPE_WEBHOOK_SECRET: 'whsec_test_placeholder',
+      OFFLINE_PAYMENT_ENABLED: 'false',
+      JWT_ACCESS_SECRET: '',
+      JWT_REFRESH_SECRET: '',
+      DOCUMENT_STORAGE_PROVIDER: 'local',
+      DOCUMENT_LOCAL_DIRECTORY: 'private-uploads-test',
+      MAIL_DELIVERY_MODE: 'log',
+      COOKIE_SECURE: 'false',
+      COOKIE_SAME_SITE: 'lax',
+      LOG_LEVEL: 'silent',
+      TRUST_PROXY: '1',
+    },
+    coverage: {
+      reporter: ['text', 'json', 'html'],
+    },
+  },
+});

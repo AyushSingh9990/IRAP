@@ -1,0 +1,45 @@
+export const DOCUMENT_CATEGORIES = Object.freeze({
+  IDENTITY: 'identity',
+  PROFILE_PHOTO: 'profile_photo',
+  QUALIFICATION_CERTIFICATE: 'qualification_certificate',
+  PROFESSIONAL_MEMBERSHIP: 'professional_membership',
+  INSURANCE: 'insurance',
+  BUSINESS_REGISTRATION: 'business_registration',
+  TRAINER_QUALIFICATION: 'trainer_qualification',
+  TRAINING_POLICY: 'training_policy',
+  ASSESSMENT_POLICY: 'assessment_policy',
+  COMPLAINTS_POLICY: 'complaints_policy',
+  REFUND_POLICY: 'refund_policy',
+  PAYMENT_PROOF: 'payment_proof',
+  QUALITY_ASSURANCE: 'quality_assurance',
+  COURSE_CURRICULUM: 'course_curriculum',
+  SAMPLE_CERTIFICATE: 'sample_certificate',
+  SAFEGUARDING_POLICY: 'safeguarding_policy',
+  CODE_OF_CONDUCT: 'code_of_conduct',
+  OTHER: 'other',
+});
+
+export const DOCUMENT_CATEGORY_VALUES = Object.freeze(
+  Object.values(DOCUMENT_CATEGORIES),
+);
+
+export const DOCUMENT_CATEGORY_LABELS = Object.freeze({
+  [DOCUMENT_CATEGORIES.IDENTITY]: 'Identity document',
+  [DOCUMENT_CATEGORIES.PROFILE_PHOTO]: 'Profile photograph',
+  [DOCUMENT_CATEGORIES.QUALIFICATION_CERTIFICATE]: 'Qualification certificate',
+  [DOCUMENT_CATEGORIES.PROFESSIONAL_MEMBERSHIP]: 'Professional membership evidence',
+  [DOCUMENT_CATEGORIES.INSURANCE]: 'Insurance evidence',
+  [DOCUMENT_CATEGORIES.BUSINESS_REGISTRATION]: 'Business registration',
+  [DOCUMENT_CATEGORIES.TRAINER_QUALIFICATION]: 'Trainer qualification',
+  [DOCUMENT_CATEGORIES.TRAINING_POLICY]: 'Training policy',
+  [DOCUMENT_CATEGORIES.ASSESSMENT_POLICY]: 'Assessment policy',
+  [DOCUMENT_CATEGORIES.COMPLAINTS_POLICY]: 'Complaints policy',
+  [DOCUMENT_CATEGORIES.REFUND_POLICY]: 'Refund policy',
+  [DOCUMENT_CATEGORIES.PAYMENT_PROOF]: 'Payment proof',
+  [DOCUMENT_CATEGORIES.QUALITY_ASSURANCE]: 'Quality-assurance evidence',
+  [DOCUMENT_CATEGORIES.COURSE_CURRICULUM]: 'Course curriculum',
+  [DOCUMENT_CATEGORIES.SAMPLE_CERTIFICATE]: 'Sample certificate',
+  [DOCUMENT_CATEGORIES.SAFEGUARDING_POLICY]: 'Safeguarding policy',
+  [DOCUMENT_CATEGORIES.CODE_OF_CONDUCT]: 'Code of conduct',
+  [DOCUMENT_CATEGORIES.OTHER]: 'Other supporting document',
+});

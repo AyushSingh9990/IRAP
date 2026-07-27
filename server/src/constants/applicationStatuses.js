@@ -1,0 +1,33 @@
+export const APPLICATION_STATUSES = Object.freeze({
+  DRAFT: 'draft',
+  SUBMITTED: 'submitted',
+  PAYMENT_PENDING: 'payment_pending',
+  PAYMENT_CONFIRMED: 'payment_confirmed',
+  UNDER_REVIEW: 'under_review',
+  ADDITIONAL_INFORMATION_REQUIRED: 'additional_information_required',
+  RESUBMITTED: 'resubmitted',
+  APPROVED: 'approved',
+  REJECTED: 'rejected',
+  WITHDRAWN: 'withdrawn',
+  SUSPENDED: 'suspended',
+  EXPIRED: 'expired',
+  RENEWAL_DUE: 'renewal_due',
+  RENEWAL_SUBMITTED: 'renewal_submitted',
+});
+
+export const APPLICATION_STATUS_VALUES = Object.freeze(
+  Object.values(APPLICATION_STATUSES),
+);
+
+export const EDITABLE_APPLICATION_STATUSES = Object.freeze([
+  APPLICATION_STATUSES.DRAFT,
+  APPLICATION_STATUSES.ADDITIONAL_INFORMATION_REQUIRED,
+]);
+
+export const WITHDRAWABLE_APPLICATION_STATUSES = Object.freeze([
+  APPLICATION_STATUSES.DRAFT,
+  APPLICATION_STATUSES.SUBMITTED,
+  APPLICATION_STATUSES.PAYMENT_PENDING,
+  APPLICATION_STATUSES.ADDITIONAL_INFORMATION_REQUIRED,
+  APPLICATION_STATUSES.RESUBMITTED,
+]);
