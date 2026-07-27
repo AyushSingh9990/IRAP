@@ -1,0 +1,86 @@
+.container {
+  display: grid;
+  gap: var(--space-7);
+}
+
+.header,
+.sectionHeading,
+.cardHeading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.header > div,
+.sectionHeading > div {
+  max-width: 54rem;
+}
+
+.header p,
+.policyCard p,
+.courseCard p {
+  color: var(--color-text-muted);
+}
+
+.eyebrow,
+.reference {
+  margin: 0 0 var(--space-2);
+  color: var(--color-primary-700) !important;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+.policyCard,
+.policyForm,
+.filters,
+.courseCard {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.policyForm,
+.filters {
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  align-items: end;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+  gap: var(--space-5);
+}
+
+.courseCard {
+  align-content: start;
+}
+
+.courseCard dl {
+  display: grid;
+  gap: var(--space-3);
+  margin: 0;
+}
+
+.courseCard dl div {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.courseCard dt {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.courseCard dd {
+  margin: 0;
+  font-weight: var(--font-weight-semibold);
+}
+
+.loading {
+  display: grid;
+  min-height: 22rem;
+  place-items: center;
+}

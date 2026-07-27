@@ -1,0 +1,16 @@
+{
+  "name": "iRAP",
+  "short_name": "iRAP",
+  "description": "Membership, accreditation, public registry, and certificate-verification platform.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#0a2732",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

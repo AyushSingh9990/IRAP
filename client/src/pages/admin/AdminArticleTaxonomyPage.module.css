@@ -1,0 +1,12 @@
+.loading { display: grid; min-height: 70vh; place-items: center; }
+.container { display: grid; gap: var(--space-6); }
+.header, .itemHeading, .actions { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--space-3); flex-wrap: wrap; }
+.header > div { max-width: 54rem; }
+.header p, .item p { color: var(--color-text-muted); }
+.eyebrow { margin: 0 0 var(--space-2); color: var(--color-primary-700); font-size: var(--font-size-sm); font-weight: var(--font-weight-bold); letter-spacing: .07em; text-transform: uppercase; }
+.columns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-5); align-items: start; }
+.column, .formCard, .form, .list, .item { display: grid; gap: var(--space-4); }
+.actions { justify-content: flex-start; }
+.item h3, .item p { margin: 0; }
+.item code { color: var(--color-text-muted); overflow-wrap: anywhere; }
+@media (max-width: 64rem) { .columns { grid-template-columns: 1fr; } }

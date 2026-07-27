@@ -1,0 +1,102 @@
+.container,
+.detailCard,
+.form {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.header,
+.actions,
+.detailHeading,
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-4);
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.eyebrow {
+  color: var(--color-primary-700);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+
+.filters {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(340px, .85fr);
+  gap: var(--space-6);
+  align-items: start;
+}
+
+.queue {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.queueItem {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-4);
+  text-align: left;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  cursor: pointer;
+}
+
+.queueItem div {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.queueItem span,
+.queueItem small {
+  color: var(--color-text-muted);
+}
+
+.selected {
+  border-color: var(--color-primary-600);
+}
+
+.details {
+  display: grid;
+  gap: var(--space-3);
+  margin: 0;
+}
+
+.details div {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--space-2);
+}
+
+.details dd {
+  margin: 0;
+  text-align: right;
+  word-break: break-word;
+}
+
+.loading {
+  min-height: 200px;
+  display: grid;
+  place-items: center;
+}
+
+@media (max-width: 900px) {
+  .workspace,
+  .filters {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,21 @@
+.content {
+  display: grid;
+  max-width: 58rem;
+  gap: var(--space-8);
+}
+
+.cta {
+  display: grid;
+  gap: var(--space-4);
+  padding: var(--space-6);
+  border-radius: var(--radius-lg);
+  background: var(--color-primary-50);
+}
+
+.cta p {
+  color: var(--color-text-muted);
+}
+
+.cta a {
+  justify-self: start;
+}

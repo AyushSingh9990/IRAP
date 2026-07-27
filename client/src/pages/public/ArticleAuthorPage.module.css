@@ -1,0 +1,48 @@
+.loading {
+  display: grid;
+  min-height: 70vh;
+  place-items: center;
+}
+
+.hero {
+  padding: clamp(4rem, 9vw, 7rem) 0;
+  background: var(--color-primary-950);
+  color: var(--color-white);
+}
+
+.hero h1 {
+  color: #ffffff !important;
+  text-shadow: 0 1px 1px rgb(0 0 0 / 18%);
+}
+
+.hero p:last-child {
+  color: rgb(255 255 255 / 90%) !important;
+}
+
+.eyebrow {
+  margin: 0 0 var(--space-2);
+  color: var(--color-accent-500);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.container {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr));
+  gap: var(--space-5);
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}

@@ -1,0 +1,17 @@
+.container { display: grid; gap: var(--space-7); }
+.header, .listHeading, .cardHeading, .actions { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--space-4); flex-wrap: wrap; }
+.header > div { max-width: 52rem; }
+.header p, .articleCard > p { color: var(--color-text-muted); }
+.eyebrow, .reference { margin: 0 0 var(--space-2); color: var(--color-primary-700); font-size: var(--font-size-sm); font-weight: var(--font-weight-bold); letter-spacing: .07em; text-transform: uppercase; }
+.createCard, .articleCard { display: grid; gap: var(--space-4); }
+.createForm, .filters { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); align-items: end; gap: var(--space-4); }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); gap: var(--space-5); }
+.articleCard dl { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-3); margin: 0; }
+.articleCard dt { color: var(--color-text-muted); font-size: var(--font-size-sm); }
+.articleCard dd { margin: 0; font-weight: var(--font-weight-semibold); }
+.loading { display: grid; min-height: 22rem; place-items: center; }
+.actions { justify-content: flex-start; }
+@media (max-width: 36rem) { .articleCard dl { grid-template-columns: 1fr; } }
+
+.pagination { display: flex; align-items: center; justify-content: center; gap: var(--space-4); flex-wrap: wrap; }
+.pagination span { color: var(--color-text-muted); font-weight: var(--font-weight-semibold); }

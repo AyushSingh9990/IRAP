@@ -1,0 +1,35 @@
+import { useCallback, useEffect, useMemo, useState } from 'react';
+import { listSupportAssignees, listSupportQueue, updateSupportRecord } from '../../api/adminApi.js';
+import Alert from '../../components/common/Alert/Alert.jsx';
+import Button from '../../components/common/Button/Button.jsx';
+import Card from '../../components/common/Card/Card.jsx';
+import EmptyState from '../../components/common/EmptyState/EmptyState.jsx';
+import FormField from '../../components/common/FormField/FormField.jsx';
+import Input from '../../components/common/Input/Input.jsx';
+import Loader from '../../components/common/Loader/Loader.jsx';
+import Select from '../../components/common/Select/Select.jsx';
+import Textarea from '../../components/common/Textarea/Textarea.jsx';
+import Seo from '../../components/seo/Seo.jsx';
+import { getApiErrorMessage } from '../../utils/apiErrors.js';
+import styles from './AdminAdministration.module.css';
+
+function AdminSupportPage() {
+  const [filters, setFilters] = useState({ kind: 'contact', status: '', search: '', page: 1, limit: 20 });
+  const [items, setItems] = useState([]); const [meta, setMeta] = useState({ page: 1, pages: 1, total: 0 }); const [assignees, setAssignees] = useState([]);
+  const [selectedId, setSelectedId] = useState(''); const [form, setForm] = useState({ status: 'new', assignedTo: '', priority: 'normal', internalNotes: '', responseSummary: '' });
+  const [loading, setLoading] = useState(true); const [saving, setSaving] = useState(false); const [error, setError] = useState(''); const [message, setMessage] = useState('');
+  const selected = useMemo(() => items.find((item) => item.id === selectedId), [items, selectedId]);
+  const load = useCallback(async () => { setLoading(true); setError(''); try { const [queue, staff] = await Promise.all([listSupportQueue(filters), listSupportAssignees()]); setItems(queue.data.items || []); setMeta(queue.meta || { page: 1, pages: 1, total: 0 }); setAssignees(staff.data.assignees || []); } catch (e) { setError(getApiErrorMessage(e)); } finally { setLoading(false); } }, [filters]);
+  useEffect(() => { void load(); }, [load]);
+  function choose(item) { setSelectedId(item.id); setForm({ status: item.status, assignedTo: item.assignedTo?.id || item.assignedTo?._id || '', priority: item.priority || 'normal', internalNotes: item.internalNotes || '', responseSummary: item.responseSummary || '' }); setMessage(''); }
+  async function save(event) { event.preventDefault(); if (!selected) return; setSaving(true); setError(''); setMessage(''); try { const result = await updateSupportRecord(filters.kind, selected.id, { ...form, assignedTo: form.assignedTo || null }); setMessage(result.message); await load(); } catch (e) { setError(getApiErrorMessage(e)); } finally { setSaving(false); } }
+  return <><Seo title="Support and Complaints" description="Manage private support and complaint submissions." noIndex /><section className="section"><div className={`container ${styles.container}`}>
+    <header className={styles.header}><div><p className={styles.eyebrow}>Support administration</p><h1>Contact submissions and complaints</h1><p>Review private submissions, assign responsible staff, record internal notes and track resolution without exposing private messages publicly.</p></div></header>
+    {message ? <Alert tone="success">{message}</Alert> : null}{error ? <Alert tone="error">{error}</Alert> : null}
+    <div className={styles.toolbar}><FormField label="Queue"><Select value={filters.kind} onChange={(e) => { setSelectedId(''); setFilters((c) => ({ ...c, kind: e.target.value, page: 1 })); }}><option value="contact">Contact enquiries</option><option value="complaint">Complaints</option></Select></FormField><FormField label="Status"><Select value={filters.status} onChange={(e) => setFilters((c) => ({ ...c, status: e.target.value, page: 1 }))}><option value="">All statuses</option><option>new</option><option>open</option><option>waiting_for_submitter</option><option>resolved</option><option>closed</option></Select></FormField><FormField label="Search"><Input value={filters.search} onChange={(e) => setFilters((c) => ({ ...c, search: e.target.value, page: 1 }))} /></FormField></div>
+    {loading ? <div className={styles.loading}><Loader label="Loading support queue" size="large" /></div> : <div className={styles.workspace}><div className={styles.list}>{items.length ? items.map((item) => <button type="button" key={item.id} onClick={() => choose(item)} className={`${styles.listButton} ${selectedId === item.id ? styles.listButtonActive : ''}`}><strong>{item.subject}</strong><span>{item.reference}</span><small>{item.status} · {item.name}</small></button>) : <EmptyState title="No submissions found" description="No private records match the selected filters." />}</div>
+      <Card>{selected ? <form className={styles.form} onSubmit={save}><h2 className={styles.sectionTitle}>{selected.subject}</h2><div className={styles.summaryGrid}><p><strong>Reference</strong><br />{selected.reference}</p><p><strong>Submitted by</strong><br />{selected.name}<br />{selected.email}</p></div><p>{selected.message}</p>{selected.relatedReference ? <p><strong>Related reference:</strong> {selected.relatedReference}</p> : null}<div className={styles.formGrid}><FormField label="Status"><Select value={form.status} onChange={(e) => setForm((c) => ({ ...c, status: e.target.value }))}><option>new</option><option>open</option><option>waiting_for_submitter</option><option>resolved</option><option>closed</option></Select></FormField><FormField label="Assigned staff"><Select value={form.assignedTo} onChange={(e) => setForm((c) => ({ ...c, assignedTo: e.target.value }))}><option value="">Unassigned</option>{assignees.map((user) => <option key={user.id} value={user.id}>{user.displayName} — {user.email}</option>)}</Select></FormField>{filters.kind === 'complaint' ? <FormField label="Priority"><Select value={form.priority} onChange={(e) => setForm((c) => ({ ...c, priority: e.target.value }))}><option>low</option><option>normal</option><option>high</option><option>urgent</option></Select></FormField> : null}</div><FormField label="Internal notes"><Textarea rows={6} value={form.internalNotes} onChange={(e) => setForm((c) => ({ ...c, internalNotes: e.target.value }))} /></FormField><FormField label="Response summary"><Textarea rows={5} value={form.responseSummary} onChange={(e) => setForm((c) => ({ ...c, responseSummary: e.target.value }))} /></FormField><Button type="submit" disabled={saving}>{saving ? 'Saving…' : 'Save record'}</Button></form> : <EmptyState title="Select a support record" description="Choose an enquiry or complaint to review it." />}</Card></div>}
+    <div className={styles.pagination}><Button variant="secondary" disabled={meta.page <= 1} onClick={() => setFilters((c) => ({ ...c, page: c.page - 1 }))}>Previous</Button><span>Page {meta.page} of {meta.pages} · {meta.total} records</span><Button variant="secondary" disabled={meta.page >= meta.pages} onClick={() => setFilters((c) => ({ ...c, page: c.page + 1 }))}>Next</Button></div>
+  </div></section></>;
+}
+export default AdminSupportPage;

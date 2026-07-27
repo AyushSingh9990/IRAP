@@ -1,0 +1,109 @@
+.button {
+  display: inline-flex;
+  min-width: max-content;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  border: 1px solid transparent;
+  border-radius: var(--radius-control);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.button:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.58;
+}
+
+.small {
+  min-height: 2.25rem;
+  padding: 0.55rem 0.8rem;
+  font-size: var(--font-size-sm);
+}
+
+.medium {
+  min-height: 2.75rem;
+  padding: 0.75rem 1rem;
+  font-size: var(--font-size-sm);
+}
+
+.large {
+  min-height: 3.125rem;
+  padding: 0.9rem 1.25rem;
+  font-size: var(--font-size-base);
+}
+
+.primary {
+  background: var(--color-primary-700);
+  color: var(--color-white);
+}
+
+.primary:hover:not(:disabled) {
+  background: var(--color-primary-800);
+  box-shadow: var(--shadow-button);
+}
+
+.secondary {
+  border-color: var(--color-primary-200);
+  background: var(--color-white);
+  color: var(--color-primary-800);
+}
+
+.secondary:hover:not(:disabled) {
+  border-color: var(--color-primary-500);
+  background: var(--color-primary-50);
+}
+
+.ghost {
+  background: transparent;
+  color: var(--color-text);
+}
+
+.ghost:hover:not(:disabled) {
+  background: var(--color-neutral-100);
+}
+
+.danger {
+  background: var(--color-error-700);
+  color: var(--color-white);
+}
+
+.danger:hover:not(:disabled) {
+  background: var(--color-error-800);
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.spinner {
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: button-spin 700ms linear infinite;
+}
+
+@keyframes button-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

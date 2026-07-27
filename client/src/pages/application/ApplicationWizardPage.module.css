@@ -1,0 +1,33 @@
+.container { display: grid; gap: var(--space-6); }
+.header { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: var(--space-5); }
+.header > div { max-width: 52rem; }
+.header p, .reviewCard > div > p, .statusGrid article > p { color: var(--color-text-muted); }
+.eyebrow, .reference { margin: 0 0 var(--space-2); color: var(--color-primary-700) !important; font-size: var(--font-size-sm); font-weight: var(--font-weight-bold); letter-spacing: .08em; text-transform: uppercase; }
+.stepCard, .reviewCard { display: grid; gap: var(--space-5); }
+.stepHeading { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: var(--space-4); }
+.stepHeading h2 { margin: 0; }
+.saveState { padding: .4rem .7rem; border-radius: 999px; font-size: var(--font-size-xs); font-weight: var(--font-weight-semibold); }
+.saved { background: var(--color-success-50); color: var(--color-success-800); }
+.saving, .unsaved { background: var(--color-warning-50); color: var(--color-warning-900); }
+.error { background: var(--color-error-50); color: var(--color-error-700); }
+.form { display: grid; gap: var(--space-5); }
+.fields { display: grid; gap: var(--space-4); }
+.checkboxField { display: grid; gap: var(--space-2); padding: var(--space-4); border: 1px solid var(--color-border-subtle); border-radius: var(--radius-md); background: var(--color-neutral-50); }
+.checkboxField label { display: flex; align-items: flex-start; gap: var(--space-3); font-weight: var(--font-weight-semibold); cursor: pointer; }
+.checkboxField input { width: 1.15rem; height: 1.15rem; margin-top: .2rem; accent-color: var(--color-primary-600); }
+.checkboxField strong, .checkboxField p { color: var(--color-error-700); }
+.checkboxField p { margin: 0; font-size: var(--font-size-sm); }
+.formActions { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-3); padding-top: var(--space-4); border-top: 1px solid var(--color-border-subtle); }
+.reviewSections { display: grid; gap: var(--space-5); }
+.reviewSections section { padding: var(--space-5); border: 1px solid var(--color-border-subtle); border-radius: var(--radius-md); }
+.reviewSections h3 { margin-top: 0; }
+.reviewSections dl { display: grid; gap: var(--space-3); margin: 0; }
+.reviewSections dl div { display: grid; gap: var(--space-1); padding-bottom: var(--space-3); border-bottom: 1px solid var(--color-border-subtle); }
+.reviewSections dl div:last-child { padding-bottom: 0; border-bottom: 0; }
+.reviewSections dt { color: var(--color-text-muted); font-size: var(--font-size-sm); }
+.reviewSections dd { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+.statusGrid { display: grid; gap: var(--space-5); }
+.statusHeader { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: var(--space-4); }
+.statusHeader h2 { margin: 0; }
+.loading { display: grid; min-height: 70vh; place-items: center; }
+@media (min-width: 48rem) { .fields { grid-template-columns: repeat(2, minmax(0, 1fr)); } .fields > :has(textarea), .checkboxField { grid-column: 1 / -1; } .reviewSections dl { grid-template-columns: repeat(2, minmax(0, 1fr)); } .statusGrid { grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); } }

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">iRAP</title>
+  <rect width="64" height="64" rx="12" fill="#0b4f6c"/>
+  <path d="M18 18h8v28h-8zm12 0h10c8 0 13 4 13 11 0 5-3 9-8 10l9 7h-11l-8-7v7h-5V18zm5 7v8h5c3 0 5-1 5-4s-2-4-5-4h-5z" fill="#fff"/>
+</svg>

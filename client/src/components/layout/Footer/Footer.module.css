@@ -1,0 +1,125 @@
+.footer {
+  margin-top: auto;
+  background: var(--color-primary-950);
+  color: var(--color-neutral-200);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(16rem, 1.6fr) repeat(3, minmax(9rem, 1fr));
+  gap: clamp(var(--space-7), 5vw, var(--space-10));
+  padding-block: clamp(var(--space-8), 8vw, var(--space-11));
+}
+
+.brandColumn {
+  display: grid;
+  align-content: start;
+  gap: var(--space-4);
+}
+
+.brandColumn p {
+  color: var(--color-neutral-300);
+  font-size: var(--font-size-sm);
+}
+
+.brand {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-white);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-extrabold);
+  text-decoration: none;
+}
+
+.brandMark {
+  display: grid;
+  width: 2.4rem;
+  height: 2.4rem;
+  place-items: center;
+  border-radius: var(--radius-sm);
+  background: var(--color-accent-500);
+  color: var(--color-primary-950);
+  font-family: var(--font-serif);
+}
+
+.settingsNote {
+  padding-left: var(--space-3);
+  border-left: 2px solid var(--color-primary-700);
+}
+
+.columnTitle {
+  margin: 0 0 var(--space-4);
+  color: var(--color-white);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-sm);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.linkList {
+  display: grid;
+  gap: var(--space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.linkList a,
+.linkList span {
+  color: var(--color-neutral-300);
+  font-size: var(--font-size-sm);
+  text-decoration: none;
+}
+
+.linkList a:hover {
+  color: var(--color-white);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.linkList span {
+  color: var(--color-neutral-500);
+  cursor: not-allowed;
+}
+
+.bottomBar {
+  border-top: 1px solid rgb(255 255 255 / 10%);
+}
+
+.bottomInner {
+  display: flex;
+  min-height: 4.25rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.bottomInner p {
+  color: var(--color-neutral-400);
+  font-size: var(--font-size-xs);
+}
+
+@media (max-width: 56rem) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .brandColumn {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 36rem) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bottomInner {
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    padding-block: var(--space-4);
+  }
+}

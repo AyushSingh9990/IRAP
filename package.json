@@ -1,0 +1,51 @@
+{
+    "name":  "irap",
+    "version":  "1.0.0",
+    "private":  true,
+    "description":  "iRAP membership, accreditation, registry, and directory platform.",
+    "license":  "UNLICENSED",
+    "engines":  {
+                    "node":  "\u003e=22.12.0",
+                    "npm":  "\u003e=10.9.0"
+                },
+    "scripts":  {
+                    "install:all":  "npm install \u0026\u0026 npm install --prefix client \u0026\u0026 npm install --prefix server",
+                    "dev":  "concurrently --kill-others-on-fail \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+                    "client":  "npm run dev --prefix client",
+                    "server":  "npm run dev --prefix server",
+                    "build":  "npm run build --prefix client",
+                    "test":  "npm run test --prefix client \u0026\u0026 npm run test --prefix server",
+                    "lint":  "npm run lint --prefix client \u0026\u0026 npm run lint --prefix server",
+                    "format":  "npm run format --prefix client \u0026\u0026 npm run format --prefix server",
+                    "format:check":  "npm run format:check --prefix client \u0026\u0026 npm run format:check --prefix server",
+                    "verify:packages":  "node scripts/verify-packages.mjs",
+                    "check":  "npm run quality",
+                    "audit":  "npm audit \u0026\u0026 npm audit --prefix client \u0026\u0026 npm audit --prefix server",
+                    "audit:production":  "node scripts/audit-production.mjs",
+                    "generate:secrets":  "node scripts/generate-secrets.mjs",
+                    "diagnose:documents":  "npm run diagnose:documents --prefix server",
+                    "diagnose:registration":  "npm run diagnose:registration --prefix server",
+                    "repair:login-session":  "npm run repair:login-session --prefix server --",
+                    "create:admin":  "npm run create:admin --prefix server",
+                    "diagnose:payments":  "npm run diagnose:payments --prefix server",
+                    "diagnose:dashboards":  "npm run diagnose:dashboards --prefix server",
+                    "diagnose:reviews":  "npm run diagnose:reviews --prefix server",
+                    "diagnose:memberships":  "npm run diagnose:memberships --prefix server",
+                    "process:membership-renewals":  "npm run process:membership-renewals --prefix server",
+                    "diagnose:directories":  "npm run diagnose:directories --prefix server",
+                    "diagnose:courses":  "npm run diagnose:courses --prefix server",
+                    "diagnose:articles":  "npm run diagnose:articles --prefix server",
+                    "diagnose:administration":  "npm run diagnose:administration --prefix server",
+                    "test:client":  "npm run test --prefix client",
+                    "test:server":  "npm run test --prefix server",
+                    "test:security":  "npm run test:security --prefix server",
+                    "test:accessibility":  "npm run test:accessibility --prefix client",
+                    "structure:check":  "node scripts/quality-gate.mjs",
+                    "clean:workspace":  "node scripts/clean-workspace.mjs",
+                    "quality":  "npm run verify:packages \u0026\u0026 npm run structure:check \u0026\u0026 npm run lint \u0026\u0026 npm run test \u0026\u0026 npm run build",
+                    "quality:full":  "npm run audit:production \u0026\u0026 npm run quality"
+                },
+    "devDependencies":  {
+                            "concurrently":  "9.2.4"
+                        }
+}

@@ -1,0 +1,117 @@
+.container,
+.form,
+.sectionCard,
+.uploadForm {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.header,
+.statusLine,
+.actions,
+.documentActions,
+.certificateCard {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.header > div {
+  max-width: 52rem;
+}
+
+.eyebrow {
+  margin: 0 0 var(--space-2);
+  color: var(--color-primary-700);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+.statusLine {
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.grid,
+.checks {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.fieldset {
+  display: grid;
+  gap: var(--space-4);
+  margin: 0;
+  padding: var(--space-5);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.fieldset legend {
+  padding-inline: var(--space-2);
+  font-weight: var(--font-weight-bold);
+}
+
+.checks {
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+}
+
+.checks label {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+.actions {
+  justify-content: flex-end;
+}
+
+.documentList {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.document {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.document h3 {
+  margin-block: var(--space-2) var(--space-1);
+}
+
+.document p,
+.document small,
+.certificateCard p {
+  color: var(--color-text-muted);
+}
+
+.documentActions {
+  justify-content: flex-end;
+}
+
+.certificateCard {
+  align-items: center;
+}
+
+.loading {
+  display: grid;
+  min-height: 28rem;
+  place-items: center;
+}
+
+@media (min-width: 48rem) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

@@ -1,0 +1,24 @@
+.container { display: grid; gap: var(--space-6); }
+.header { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: var(--space-5); }
+.header > div:first-child { max-width: 48rem; }
+.header p { color: var(--color-text-muted); }
+.eyebrow { margin-bottom: var(--space-2); color: var(--color-primary-700) !important; font-size: var(--font-size-xs); font-weight: var(--font-weight-bold); letter-spacing: .08em; text-transform: uppercase; }
+.actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3); }
+.toolbar { display: flex; align-items: center; gap: var(--space-3); max-width: 22rem; }
+.toolbar label { font-weight: var(--font-weight-semibold); }
+.toolbar select { min-width: 12rem; }
+.loading { min-height: 15rem; display: grid; place-items: center; }
+.list { display: grid; gap: var(--space-3); }
+.notification { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: var(--space-4); }
+.unread { border-left: .3rem solid var(--color-primary-600); background: var(--color-primary-50); }
+.notificationBody { min-width: 0; }
+.notificationMeta { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3); }
+.notificationMeta time { color: var(--color-text-muted); font-size: var(--font-size-sm); }
+.notification h2 { margin-top: var(--space-3); font-size: var(--font-size-xl); }
+.notification p { margin-bottom: 0; }
+.notificationActions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: var(--space-2); }
+.preferences { display: grid; gap: var(--space-5); }
+.preferenceGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-3); }
+.checkbox { display: flex; align-items: center; gap: var(--space-3); padding: var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-control); }
+.checkbox input { width: 1.1rem; height: 1.1rem; accent-color: var(--color-primary-600); }
+@media (max-width: 47.99rem) { .notification { grid-template-columns: 1fr; } .notificationActions { justify-content: flex-start; } .preferenceGrid { grid-template-columns: 1fr; } }

@@ -1,0 +1,12 @@
+.form {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.element {
+  min-height: 132px;
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+}

@@ -1,0 +1,18 @@
+.content {
+  display: grid;
+  max-width: 58rem;
+  gap: var(--space-5);
+}
+
+.sectionCard {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.sectionCard p {
+  color: var(--color-text-muted);
+}
+
+.preserve {
+  white-space: pre-wrap;
+}

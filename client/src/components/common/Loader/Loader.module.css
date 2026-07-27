@@ -1,0 +1,32 @@
+.wrapper {
+  display: inline-grid;
+  place-items: center;
+}
+
+.spinner {
+  border: 3px solid var(--color-primary-100);
+  border-right-color: var(--color-primary-700);
+  border-radius: 50%;
+  animation: loader-spin 750ms linear infinite;
+}
+
+.small {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.medium {
+  width: 2rem;
+  height: 2rem;
+}
+
+.large {
+  width: 3rem;
+  height: 3rem;
+}
+
+@keyframes loader-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

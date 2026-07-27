@@ -1,0 +1,159 @@
+.hero {
+  padding-block: clamp(var(--space-8), 9vw, var(--space-11));
+  background: var(--color-primary-950);
+  color: var(--color-white);
+}
+
+
+.hero h1 {
+  color: #ffffff !important;
+  text-shadow: 0 1px 1px rgb(0 0 0 / 18%);
+}
+
+.hero p {
+  max-width: 48rem;
+  color: rgb(255 255 255 / 90%) !important;
+}
+
+.eyebrow {
+  margin: 0 0 var(--space-2);
+  color: var(--color-accent-500) !important;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.layout,
+.filters,
+.results {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.filtersCard {
+  align-self: start;
+}
+
+.heading,
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.filterGrid,
+.cards {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.distance {
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.distance summary {
+  cursor: pointer;
+  font-weight: var(--font-weight-bold);
+}
+
+.distance .filterGrid {
+  margin-top: var(--space-4);
+}
+
+.cards {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+}
+
+.profileCard {
+  display: grid;
+  align-content: start;
+  gap: var(--space-4);
+}
+
+.identity {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: var(--space-4);
+}
+
+.identity > span {
+  display: grid;
+  width: 4rem;
+  height: 4rem;
+  place-items: center;
+  border-radius: var(--radius-md);
+  background: var(--color-primary-100);
+  color: var(--color-primary-800);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+}
+
+.identity h3 {
+  margin-block: var(--space-2) var(--space-1);
+}
+
+.identity p,
+.profileCard > p {
+  color: var(--color-text-muted);
+}
+
+.profileCard dl {
+  display: grid;
+  gap: var(--space-3);
+  margin: 0;
+}
+
+.profileCard dl div {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.profileCard dt {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.profileCard dd {
+  margin: 0;
+  font-weight: var(--font-weight-semibold);
+  overflow-wrap: anywhere;
+}
+
+.profileLink {
+  width: fit-content;
+  margin-top: auto;
+  color: var(--color-primary-700);
+  font-weight: var(--font-weight-bold);
+}
+
+.loading {
+  display: grid;
+  min-height: 18rem;
+  place-items: center;
+}
+
+.pagination {
+  justify-content: center;
+}
+
+@media (min-width: 64rem) {
+  .layout {
+    grid-template-columns: minmax(18rem, 22rem) minmax(0, 1fr);
+  }
+
+  .filtersCard {
+    position: sticky;
+    top: var(--space-5);
+  }
+}
+
+@media (min-width: 48rem) {
+  .filterGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

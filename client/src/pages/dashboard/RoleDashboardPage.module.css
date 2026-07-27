@@ -1,0 +1,20 @@
+.container { display: grid; gap: var(--space-7); }
+.loading { min-height: 22rem; display: grid; place-items: center; }
+.header { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: var(--space-5); }
+.header > div { max-width: 50rem; }
+.header p { color: var(--color-text-muted); }
+.eyebrow { margin-bottom: var(--space-2); color: var(--color-primary-700) !important; font-size: var(--font-size-xs); font-weight: var(--font-weight-bold); letter-spacing: .08em; text-transform: uppercase; }
+.heroGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-5); }
+.progressCard, .statusCard { display: grid; align-content: start; gap: var(--space-4); }
+.progressCard > span, .statusCard > span { color: var(--color-text-muted); font-size: var(--font-size-sm); }
+.progressCard > strong { font-family: var(--font-serif); font-size: var(--font-size-5xl); }
+.progressTrack { height: .7rem; overflow: hidden; border-radius: var(--radius-pill); background: var(--color-neutral-200); }
+.progressTrack span { display: block; height: 100%; background: var(--color-primary-600); }
+.moduleGrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-4); }
+.moduleGrid article { display: grid; align-content: start; gap: var(--space-3); }
+.sectionBlock, .list { display: grid; gap: var(--space-4); }
+.sectionHeading { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-3); }
+.paymentCard { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); }
+.paymentCard small { display: block; margin-top: var(--space-1); color: var(--color-text-muted); }
+@media (max-width: 70rem) { .moduleGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 47.99rem) { .heroGrid, .moduleGrid { grid-template-columns: 1fr; } .paymentCard { align-items: flex-start; flex-direction: column; } }

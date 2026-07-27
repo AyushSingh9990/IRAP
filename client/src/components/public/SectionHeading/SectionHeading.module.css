@@ -1,0 +1,15 @@
+.heading {
+  display: grid;
+  max-width: 48rem;
+  gap: var(--space-3);
+}
+
+.center {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.description {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-lg);
+}

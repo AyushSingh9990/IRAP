@@ -1,0 +1,21 @@
+.page {
+  display: grid;
+  min-height: 65vh;
+  place-items: center;
+  padding-block: var(--space-9);
+}
+
+.panel {
+  display: grid;
+  max-width: 44rem;
+  gap: var(--space-4);
+}
+
+.code {
+  margin: 0;
+  color: var(--color-primary-100);
+  font-family: var(--font-serif);
+  font-size: clamp(5rem, 20vw, 10rem);
+  font-weight: var(--font-weight-bold);
+  line-height: 0.75;
+}

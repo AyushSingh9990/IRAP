@@ -1,0 +1,12 @@
+.content {
+  display: grid;
+  gap: var(--space-5);
+  color: var(--color-text);
+  font-size: clamp(1.05rem, 2vw, 1.18rem);
+  line-height: 1.85;
+}
+
+.content p {
+  margin: 0;
+  white-space: pre-wrap;
+}

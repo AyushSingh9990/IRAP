@@ -1,0 +1,161 @@
+.container {
+  display: grid;
+  gap: var(--space-7);
+}
+
+.header,
+.statusLine,
+.sectionHeading,
+.actions,
+.documentButtons {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.header > div,
+.sectionHeading > div {
+  max-width: 54rem;
+}
+
+.header p,
+.section p,
+.summaryGrid p,
+.document p {
+  color: var(--color-text-muted);
+}
+
+.eyebrow {
+  margin: 0 0 var(--space-2);
+  color: var(--color-primary-700);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+.statusLine {
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.summaryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: var(--space-4);
+}
+
+.summaryGrid :global(.card) {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.section,
+.form,
+.inlineForm,
+.recordGrid,
+.documents,
+.documentReview,
+.notes {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.inlineForm {
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  align-items: end;
+}
+
+.recordGrid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+}
+
+.recordGrid section {
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.recordGrid ul {
+  display: grid;
+  gap: var(--space-2);
+  padding-left: 1.25rem;
+}
+
+.preWrap {
+  white-space: pre-wrap;
+  line-height: 1.7;
+}
+
+.document {
+  display: grid;
+  gap: var(--space-4);
+  padding: var(--space-5);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.document h3 {
+  margin-block: var(--space-2) var(--space-1);
+}
+
+.documentButtons {
+  justify-content: flex-start;
+}
+
+.documentReview {
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+}
+
+.checklist {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+}
+
+.checklist label {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+.twoColumn {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.notes article {
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.notes small {
+  color: var(--color-text-muted);
+}
+
+.actions {
+  justify-content: flex-end;
+}
+
+.loading {
+  display: grid;
+  min-height: 32rem;
+  place-items: center;
+}
+
+@media (min-width: 64rem) {
+  .twoColumn {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .documentReview {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

@@ -1,0 +1,54 @@
+.form {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.fieldGrid {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.actions,
+.successState {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.supportText {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  text-align: center;
+}
+
+.supportText a {
+  font-weight: var(--font-weight-semibold);
+}
+
+.passwordHelp {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.developmentLink {
+  overflow-wrap: anywhere;
+}
+
+.heading {
+  margin-bottom: var(--space-5);
+}
+
+.heading h2 {
+  margin-bottom: var(--space-2);
+}
+
+.heading p {
+  color: var(--color-text-muted);
+}
+
+@media (min-width: 36rem) {
+  .fieldGridTwo {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

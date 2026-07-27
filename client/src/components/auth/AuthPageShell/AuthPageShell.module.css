@@ -1,0 +1,9 @@
+.section { padding-block: clamp(var(--space-8), 8vw, var(--space-11)); }
+.container { display: grid; gap: var(--space-7); align-items: start; }
+.introduction { max-width: 38rem; }
+.introduction h1 { margin-bottom: var(--space-4); }
+.introduction > p:not(.eyebrow) { color: var(--color-text-muted); }
+.eyebrow { margin-bottom: var(--space-3); color: var(--color-primary-700); font-size: var(--font-size-sm); font-weight: var(--font-weight-bold); letter-spacing: .08em; text-transform: uppercase; }
+.assurances { display: grid; gap: var(--space-2); margin-top: var(--space-5); padding-left: 1.2rem; color: var(--color-text-muted); }
+.card { width: 100%; max-width: 36rem; }
+@media (min-width: 64rem) { .container { grid-template-columns: minmax(0, 1fr) minmax(24rem, 36rem); gap: var(--space-10); } }

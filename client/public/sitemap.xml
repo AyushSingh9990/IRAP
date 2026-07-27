@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>http://localhost:5173/</loc></url>
+  <url><loc>http://localhost:5173/about</loc></url>
+  <url><loc>http://localhost:5173/contact</loc></url>
+  <url><loc>http://localhost:5173/approved-modalities</loc></url>
+  <url><loc>http://localhost:5173/membership</loc></url>
+  <url><loc>http://localhost:5173/training-providers</loc></url>
+  <url><loc>http://localhost:5173/organizations</loc></url>
+  <url><loc>http://localhost:5173/directory</loc></url>
+  <url><loc>http://localhost:5173/directory/courses</loc></url>
+  <url><loc>http://localhost:5173/verify-course-certificate</loc></url>
+  <url><loc>http://localhost:5173/directory/organizations</loc></url>
+  <url><loc>http://localhost:5173/directory/training-providers</loc></url>
+  <url><loc>http://localhost:5173/directory/members</loc></url>
+  <url><loc>http://localhost:5173/articles</loc></url>
+  <url><loc>http://localhost:5173/faq</loc></url>
+  <url><loc>http://localhost:5173/code-of-ethics</loc></url>
+  <url><loc>http://localhost:5173/complaints</loc></url>
+  <url><loc>http://localhost:5173/privacy-policy</loc></url>
+  <url><loc>http://localhost:5173/cookie-policy</loc></url>
+  <url><loc>http://localhost:5173/terms-and-conditions</loc></url>
+  <url><loc>http://localhost:5173/accessibility</loc></url>
+  <url><loc>http://localhost:5173/legal-disclaimer</loc></url>
+</urlset>

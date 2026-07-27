@@ -1,0 +1,32 @@
+.container { display: grid; gap: var(--space-7); }
+.loading { min-height: 24rem; display: grid; place-items: center; }
+.header { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: var(--space-5); }
+.header > div { max-width: 52rem; }
+.header p { color: var(--color-text-muted); }
+.eyebrow { margin-bottom: var(--space-2); color: var(--color-primary-700) !important; font-size: var(--font-size-xs); font-weight: var(--font-weight-bold); letter-spacing: .08em; text-transform: uppercase; }
+.metrics { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-4); }
+.metrics article { display: grid; align-content: start; gap: var(--space-3); }
+.metricLabel { color: var(--color-text-muted); font-size: var(--font-size-sm); }
+.metricValue { font-family: var(--font-serif); font-size: var(--font-size-3xl); color: var(--color-neutral-900); }
+.sectionBlock { display: grid; gap: var(--space-4); }
+.sectionHeading { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-4); }
+.sectionHeading h2 { margin: 0; }
+.roleGrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-4); }
+.roleCard, .compactCard, .notificationCard { display: grid; gap: var(--space-4); }
+.cardHeading { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: var(--space-3); }
+.cardHeading small { display: block; margin-top: var(--space-1); color: var(--color-text-muted); }
+.progressRow { display: flex; align-items: center; gap: var(--space-3); }
+.progressTrack { height: .55rem; flex: 1; overflow: hidden; border-radius: var(--radius-pill); background: var(--color-neutral-200); }
+.progressTrack span { display: block; height: 100%; border-radius: inherit; background: var(--color-primary-600); }
+.reference { color: var(--color-text-muted); font-size: var(--font-size-sm); }
+.twoColumn { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(17rem, .65fr); gap: var(--space-5); }
+.list { display: grid; gap: var(--space-3); }
+.paymentSummary { display: grid; gap: var(--space-4); }
+.paymentSummary div { display: flex; justify-content: space-between; gap: var(--space-4); padding-bottom: var(--space-3); border-bottom: 1px solid var(--color-border-subtle); }
+.paymentSummary div:last-child { padding-bottom: 0; border-bottom: 0; }
+.paymentSummary span { color: var(--color-text-muted); }
+.notificationCard { grid-template-columns: minmax(0, 1fr) auto; align-items: center; }
+.notificationCard h3 { margin-top: var(--space-3); }
+.notificationCard p { margin-bottom: 0; }
+@media (max-width: 75rem) { .metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); } .roleGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 47.99rem) { .metrics, .roleGrid, .twoColumn { grid-template-columns: 1fr; } .notificationCard { grid-template-columns: 1fr; } }

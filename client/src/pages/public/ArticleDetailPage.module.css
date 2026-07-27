@@ -1,0 +1,148 @@
+.loading {
+  display: grid;
+  min-height: 70vh;
+  place-items: center;
+}
+
+.hero {
+  padding: clamp(4rem, 9vw, 7rem) 0;
+  background: var(--color-primary-950);
+  color: var(--color-white);
+}
+
+.heroInner {
+  display: grid;
+  gap: var(--space-4);
+  max-width: 58rem;
+}
+
+.hero h1 {
+  margin: 0;
+  color: #ffffff !important;
+  text-shadow: 0 1px 1px rgb(0 0 0 / 18%);
+  font-size: clamp(2.5rem, 7vw, 5rem);
+}
+
+.backLink,
+.meta a {
+  color: var(--color-primary-100);
+  font-weight: var(--font-weight-semibold);
+}
+
+.category {
+  margin: 0;
+  color: var(--color-accent-500);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.summary {
+  margin: 0;
+  color: var(--color-primary-100);
+  font-size: clamp(1.15rem, 2.5vw, 1.45rem);
+  line-height: 1.65;
+}
+
+.meta {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  color: var(--color-primary-100);
+}
+
+.meta span:not(:last-child)::after,
+.meta a::after {
+  content: '•';
+  margin-left: var(--space-3);
+}
+
+.articleLayout {
+  display: grid;
+  gap: var(--space-7);
+  max-width: 68rem;
+}
+
+.image {
+  width: 100%;
+  max-height: 42rem;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.contentColumn {
+  display: grid;
+  gap: var(--space-7);
+  max-width: 50rem;
+  margin-inline: auto;
+}
+
+.tags {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.tags a {
+  padding: .45rem .8rem;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  color: var(--color-primary-800);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+}
+
+.tags a:hover,
+.tags a:focus-visible {
+  border-color: var(--color-primary-500);
+  background: var(--color-primary-50);
+}
+
+.authorCard {
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-6);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-neutral-50);
+}
+
+.authorCard h2,
+.authorCard p {
+  margin: 0;
+}
+
+.authorCard > p:not(.category) {
+  color: var(--color-text-muted);
+}
+
+
+.relatedSection {
+  border-top: 1px solid var(--color-border-subtle);
+  background: var(--color-neutral-50);
+}
+
+.relatedContainer {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.relatedGrid {
+  display: grid;
+  gap: var(--space-5);
+}
+
+@media (min-width: 48rem) {
+  .relatedGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 70rem) {
+  .relatedGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

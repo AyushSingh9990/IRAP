@@ -1,0 +1,6 @@
+.section { padding: clamp(2rem, 5vw, 4rem) 0; }
+.layout { display: grid; grid-template-columns: minmax(15rem, 18rem) minmax(0, 1fr); gap: var(--space-6); align-items: start; }
+.content { min-width: 0; }
+.content > :global(.section) { padding: 0; }
+.content > :global(.section) > :global(.container) { width: 100%; max-width: none; padding-inline: 0; }
+@media (max-width: 63.99rem) { .layout { grid-template-columns: 1fr; } }

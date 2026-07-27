@@ -1,0 +1,21 @@
+.container { display: grid; gap: var(--space-8); }
+.header { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: var(--space-5); }
+.header > div { max-width: 48rem; }
+.header p, .journeys > div > p, .sectionHeading p, .journeyGrid p { color: var(--color-text-muted); }
+.eyebrow, .reference { margin-bottom: var(--space-2); color: var(--color-primary-700) !important; font-size: var(--font-size-sm); font-weight: var(--font-weight-bold); letter-spacing: .08em; text-transform: uppercase; }
+.journeys, .sectionHeading { display: grid; gap: var(--space-5); }
+.journeyGrid { display: grid; gap: var(--space-4); }
+.journeyGrid article { display: flex; flex-direction: column; gap: var(--space-3); }
+.journeyGrid article p { flex: 1; }
+.applicationList { display: grid; gap: var(--space-4); margin-top: var(--space-5); }
+.applicationCard { display: grid; gap: var(--space-4); }
+.applicationHeading { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: var(--space-3); }
+.applicationHeading h3, .applicationHeading p { margin: 0; }
+.progressRow { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: var(--space-3); }
+.progressTrack { overflow: hidden; height: .65rem; border-radius: 999px; background: var(--color-neutral-100); }
+.progressTrack span { display: block; height: 100%; border-radius: inherit; background: var(--color-primary-600); }
+.actions { display: flex; flex-wrap: wrap; gap: var(--space-3); }
+.loading { display: grid; min-height: 12rem; place-items: center; }
+@media (min-width: 48rem) { .journeyGrid { grid-template-columns: repeat(3, minmax(0, 1fr)); } .applicationList { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+.headerActions { display: flex; flex-wrap: wrap; gap: var(--space-3); }

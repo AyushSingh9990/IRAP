@@ -1,0 +1,235 @@
+.introductionGrid,
+.verifyGrid,
+.contactCtaInner {
+  display: grid;
+  gap: var(--space-7);
+  align-items: center;
+}
+
+.principlesCard,
+.roleCard,
+.benefitCard,
+.pricingCard,
+.verifyCard {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.checkList {
+  display: grid;
+  gap: var(--space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.checkList li {
+  position: relative;
+  padding-left: 1.7rem;
+  color: var(--color-text-muted);
+}
+
+.checkList li::before {
+  position: absolute;
+  left: 0;
+  color: var(--color-success-600);
+  content: '✓';
+  font-weight: var(--font-weight-bold);
+}
+
+.mutedSection {
+  border-block: 1px solid var(--color-border-subtle);
+  background: var(--color-neutral-100);
+}
+
+.roleGrid,
+.benefitGrid,
+.pricingGrid,
+.splitEmptyStates {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.roleCard p,
+.benefitCard p,
+.pricingCard p,
+.journeyBand p,
+.verifySection p,
+.contactCta p {
+  color: var(--color-text-muted);
+}
+
+.roleNumber {
+  color: var(--color-primary-600);
+  font-family: var(--font-serif);
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  line-height: 1;
+}
+
+.journeyBand {
+  padding-block: clamp(var(--space-7), 6vw, var(--space-10));
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+.journeyBandReverse {
+  background: var(--color-primary-50);
+}
+
+.journeyInner {
+  display: grid;
+  gap: var(--space-6);
+  align-items: center;
+}
+
+.journeyMarker {
+  display: grid;
+  width: clamp(5rem, 12vw, 8rem);
+  height: clamp(5rem, 12vw, 8rem);
+  place-items: center;
+  border: 1px solid var(--color-primary-200);
+  border-radius: 50%;
+  background: var(--color-white);
+  color: var(--color-primary-700);
+  font-family: var(--font-serif);
+  font-size: clamp(var(--font-size-4xl), 6vw, var(--font-size-6xl));
+  box-shadow: var(--shadow-md);
+}
+
+.benefitIcon {
+  display: grid;
+  width: 2.5rem;
+  height: 2.5rem;
+  place-items: center;
+  border-radius: var(--radius-pill);
+  background: var(--color-success-50);
+  color: var(--color-success-800);
+  font-weight: var(--font-weight-bold);
+}
+
+.darkSection {
+  background: var(--color-primary-950);
+  color: var(--color-white);
+}
+
+.darkSection h2,
+.darkSection h3 {
+  color: var(--color-white);
+}
+
+.darkSection :global(.eyebrow) {
+  color: var(--color-accent-300);
+}
+
+.darkSection :global(p) {
+  color: rgb(255 255 255 / 72%);
+}
+
+.processGrid {
+  display: grid;
+  gap: var(--space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.processGrid li {
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-5);
+  border: 1px solid rgb(255 255 255 / 14%);
+  border-radius: var(--radius-md);
+  background: rgb(255 255 255 / 5%);
+}
+
+.processGrid span {
+  display: grid;
+  width: 2.35rem;
+  height: 2.35rem;
+  place-items: center;
+  border-radius: var(--radius-pill);
+  background: var(--color-accent-500);
+  color: var(--color-primary-950);
+  font-weight: var(--font-weight-bold);
+}
+
+.verifySection {
+  background: linear-gradient(135deg, var(--color-primary-50), var(--color-white));
+}
+
+.faqWrap {
+  width: min(100%, 56rem);
+  margin-inline: auto;
+}
+
+.centerAction {
+  display: flex;
+  justify-content: center;
+}
+
+.contactCta {
+  padding-block: clamp(var(--space-7), 6vw, var(--space-9));
+  border-top: 1px solid var(--color-border-subtle);
+  background: var(--color-accent-300);
+}
+
+.contactCta p {
+  max-width: 60ch;
+  color: var(--color-primary-950);
+}
+
+@media (min-width: 48rem) {
+  .roleGrid,
+  .pricingGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .benefitGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .processGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .journeyInner {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+}
+
+@media (min-width: 64rem) {
+  .introductionGrid,
+  .verifyGrid,
+  .contactCtaInner {
+    grid-template-columns: minmax(0, 1fr) minmax(22rem, 0.8fr);
+  }
+
+  .benefitGrid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .processGrid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .splitEmptyStates {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .contactCtaInner {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+}
+
+
+.homeArticleGrid {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.articleLoading {
+  min-height: 10rem;
+  display: grid;
+  place-items: center;
+  color: var(--color-text-muted);
+}
