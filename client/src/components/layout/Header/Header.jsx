@@ -134,8 +134,12 @@ function Header() {
     <header className={styles.header}>
       <div className={`container ${styles.inner}`}>
         <Link className={styles.brand} to="/" aria-label="iRAP home">
-          <span className={styles.brandMark}>i</span>
-          <span>iRAP</span>
+          <img
+            aria-hidden="true"
+            className={styles.brandLogo}
+            src="/irap-logo-header.webp"
+            alt=""
+          />
         </Link>
 
         <nav className={styles.desktopNavigation} aria-label="Primary navigation">

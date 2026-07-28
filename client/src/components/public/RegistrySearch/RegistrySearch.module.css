@@ -1,17 +1,10 @@
 .searchPanel {
   container-type: inline-size;
-
   display: grid;
   width: 100%;
   max-width: 100%;
-  gap: var(--space-5);
-
-  padding: clamp(
-    var(--space-4),
-    4vw,
-    var(--space-6)
-  );
-
+  gap: clamp(1rem, 2vw, 1.5rem);
+  padding: clamp(1rem, 2.5vw, 1.5rem);
   border: 1px solid rgb(255 255 255 / 24%);
   border-radius: var(--radius-lg);
   background: rgb(255 255 255 / 96%);
@@ -20,7 +13,7 @@
   box-sizing: border-box;
 }
 
-/* Mobile-first: one field in each row */
+/* Mobile-first: one field in each row. */
 .grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -43,18 +36,18 @@
 
 .submit {
   width: 100%;
-  min-height: 3.5rem;
+  min-height: 3.35rem;
 }
 
-/* Small tablet and narrow desktop sections */
+/* Tablet and compact desktop: two comfortably wide fields per row. */
 @container (min-width: 30rem) {
   .grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-/* Medium desktop sections */
-@container (min-width: 58rem) {
+/* Medium desktop: three filters, with the keyword field using a full row. */
+@container (min-width: 54rem) {
   .grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -64,14 +57,14 @@
   }
 }
 
-/* Wide desktop sections */
-@container (min-width: 74rem) {
+/* Only very wide panels use four columns. */
+@container (min-width: 72rem) {
   .grid {
     grid-template-columns:
       minmax(11.5rem, 1fr)
       minmax(11.5rem, 1fr)
       minmax(11.5rem, 1fr)
-      minmax(18rem, 1.55fr);
+      minmax(19rem, 1.65fr);
   }
 
   .keywordField {
@@ -79,7 +72,6 @@
   }
 }
 
-/* Extra-small mobile devices */
 @media (max-width: 24rem) {
   .searchPanel {
     gap: var(--space-4);
@@ -91,6 +83,6 @@
   }
 
   .submit {
-    min-height: 3.25rem;
+    min-height: 3.2rem;
   }
 }

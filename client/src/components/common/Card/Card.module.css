@@ -25,9 +25,9 @@
 }
 
 .padding-medium {
-  padding: clamp(var(--space-5), 4vw, var(--space-7));
+  padding: clamp(1rem, 2.2vw, 1.5rem);
 }
 
 .padding-large {
-  padding: clamp(var(--space-6), 6vw, var(--space-9));
+  padding: clamp(1.25rem, 3.5vw, 2.5rem);
 }

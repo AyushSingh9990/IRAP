@@ -9,33 +9,25 @@
 
 .inner {
   display: flex;
-  min-height: 4.75rem;
+  min-height: 4.5rem;
   align-items: center;
-  gap: var(--space-5);
+  gap: clamp(0.75rem, 1.5vw, 1.25rem);
 }
 
 .brand {
   display: inline-flex;
   flex: 0 0 auto;
   align-items: center;
-  gap: var(--space-2);
   color: var(--color-primary-950);
-  font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-extrabold);
-  letter-spacing: -0.03em;
   text-decoration: none;
 }
 
-.brandMark {
-  display: grid;
-  width: 2.25rem;
-  height: 2.25rem;
-  place-items: center;
-  border-radius: var(--radius-sm);
-  background: var(--color-primary-700);
-  color: var(--color-white);
-  font-family: var(--font-serif);
-  font-size: var(--font-size-xl);
+.brandLogo {
+  display: block;
+  width: auto;
+  max-width: 9rem;
+  height: 3.2rem;
+  object-fit: contain;
 }
 
 .desktopNavigation {
@@ -62,7 +54,7 @@
   min-height: 2.5rem;
   align-items: center;
   gap: var(--space-1);
-  padding: 0.65rem 0.7rem;
+  padding: 0.6rem 0.65rem;
   border: 0;
   border-radius: var(--radius-control);
   background: transparent;
@@ -116,7 +108,7 @@
 .dropdownLink,
 .dropdownUnavailable {
   display: block;
-  padding: 0.7rem 0.75rem;
+  padding: 0.65rem 0.75rem;
   border-radius: var(--radius-sm);
   color: var(--color-text-muted);
   font-size: var(--font-size-sm);
@@ -141,8 +133,8 @@
 
 .menuButton {
   display: none;
-  width: 3rem;
-  height: 3rem;
+  width: 2.85rem;
+  height: 2.85rem;
   place-items: center;
   margin-left: auto;
   border: 1px solid var(--color-border);
@@ -160,5 +152,21 @@
 
   .menuButton {
     display: grid;
+  }
+}
+
+@media (max-width: 36rem) {
+  .inner {
+    min-height: 4.25rem;
+  }
+
+  .brandLogo {
+    max-width: 8rem;
+    height: 2.85rem;
+  }
+
+  .menuButton {
+    width: 2.75rem;
+    height: 2.75rem;
   }
 }

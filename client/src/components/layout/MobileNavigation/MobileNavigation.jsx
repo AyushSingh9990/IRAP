@@ -86,9 +86,18 @@ function MobileNavigation({ accountItems, isOpen, items, onClose }) {
         onMouseDown={(event) => event.stopPropagation()}
       >
         <header className={styles.header}>
-          <Link className={styles.brand} to="/" onClick={onClose}>
-            <span className={styles.brandMark}>i</span>
-            <span>iRAP</span>
+          <Link
+            className={styles.brand}
+            to="/"
+            aria-label="iRAP home"
+            onClick={onClose}
+          >
+            <img
+              aria-hidden="true"
+              className={styles.brandLogo}
+              src="/irap-logo-header.webp"
+              alt=""
+            />
           </Link>
           <button
             className={styles.closeButton}

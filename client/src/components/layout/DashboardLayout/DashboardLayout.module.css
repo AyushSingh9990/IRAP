@@ -1,7 +1,35 @@
-.section { padding: clamp(2rem, 5vw, 4rem) 0; }
-.layout { display: grid; grid-template-columns: minmax(14rem, 17rem) minmax(0, 1fr); gap: var(--space-6); align-items: start; }
-.content { min-width: 0; }
-.content > :global(.section) { padding: 0; }
-.content > :global(.section) > :global(.container) { width: 100%; max-width: none; padding-inline: 0; }
+.section {
+  padding: clamp(1.35rem, 3vw, 2.5rem) 0;
+}
 
-@media (max-width: 63.99rem) { .layout { grid-template-columns: minmax(0, 1fr); } }
+.layout {
+  display: grid;
+  grid-template-columns: minmax(14rem, 16rem) minmax(0, 1fr);
+  gap: clamp(1rem, 2vw, 1.5rem);
+  align-items: start;
+}
+
+.content {
+  min-width: 0;
+}
+
+.content > :global(.section) {
+  padding: 0;
+}
+
+.content > :global(.section) > :global(.container) {
+  width: 100%;
+  max-width: none;
+  padding-inline: 0;
+}
+
+@media (max-width: 63.99rem) {
+  .section {
+    padding: 1.25rem 0 2rem;
+  }
+
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+  }
+}

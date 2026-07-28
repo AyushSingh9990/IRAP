@@ -12,7 +12,7 @@
 }
 
 .section {
-  padding-block: clamp(var(--space-8), 8vw, var(--space-11));
+  padding-block: clamp(2.25rem, 5vw, 4.75rem);
 }
 
 .stack {
@@ -25,7 +25,7 @@
 }
 
 .stack--large {
-  gap: clamp(var(--space-6), 5vw, var(--space-9));
+  gap: clamp(1.5rem, 3.5vw, 3rem);
 }
 
 .cluster {
@@ -69,4 +69,14 @@
   display: grid;
   min-height: 50vh;
   place-items: center;
+}
+
+@media (max-width: 36rem) {
+  .section {
+    padding-block: 2.1rem;
+  }
+
+  .stack--large {
+    gap: 1.5rem;
+  }
 }
