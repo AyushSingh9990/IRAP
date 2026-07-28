@@ -33,7 +33,7 @@
 .description {
   max-width: 65ch;
   color: rgb(255 255 255 / 92%) !important;
-  font-size: clamp(1rem, 1.8vw, 1.125rem);
+  font-size: clamp(0.96875rem, 1.6vw, 1.0625rem);
   line-height: 1.62;
 }
 

@@ -38,7 +38,7 @@ function Footer() {
     <footer className={styles.footer}>
       <div className={`container ${styles.grid}`}>
         <div className={styles.brandColumn}>
-          <Link className={styles.brand} to="/" aria-label={`${name} home`}><img aria-hidden="true" className={styles.brandLogo} src="/irap-logo-full.webp" alt="" /></Link>
+          <Link className={styles.brand} to="/" aria-label={`${name} home`}><img aria-hidden="true" className={styles.brandLogo} src="/irap-logo.png" alt="" /></Link>
           <p>{description}</p>
           {email || telephone ? <p className={styles.settingsNote}>{email ? <a href={`mailto:${email}`}>{email}</a> : null}{email && telephone ? ' · ' : null}{telephone ? <a href={`tel:${telephone}`}>{telephone}</a> : null}</p> : <p className={styles.settingsNote}>Contact details are administrator-controlled and are not invented in source code.</p>}
         </div>

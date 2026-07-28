@@ -137,7 +137,7 @@ function Header() {
           <img
             aria-hidden="true"
             className={styles.brandLogo}
-            src="/irap-logo-header.webp"
+            src="/irap-logo.png"
             alt=""
           />
         </Link>

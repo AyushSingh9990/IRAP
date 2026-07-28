@@ -19,23 +19,23 @@ h4 {
 
 h1 {
   max-width: 21ch;
-  font-size: clamp(2rem, 4.4vw, var(--font-size-6xl));
+  font-size: clamp(1.95rem, 4vw, var(--font-size-6xl));
   letter-spacing: -0.04em;
 }
 
 h2 {
   max-width: 28ch;
-  font-size: clamp(1.625rem, 3.2vw, var(--font-size-4xl));
+  font-size: clamp(1.55rem, 3vw, var(--font-size-4xl));
   letter-spacing: -0.03em;
 }
 
 h3 {
-  font-size: clamp(1.2rem, 2vw, var(--font-size-2xl));
+  font-size: clamp(1.15rem, 1.8vw, var(--font-size-2xl));
   letter-spacing: -0.018em;
 }
 
 h4 {
-  font-size: clamp(1.0625rem, 1.5vw, var(--font-size-xl));
+  font-size: clamp(1rem, 1.35vw, var(--font-size-xl));
 }
 
 p {
@@ -60,15 +60,15 @@ strong {
 @media (max-width: 36rem) {
   h1 {
     max-width: 100%;
-    font-size: clamp(1.9rem, 9.5vw, 2.4rem);
+    font-size: clamp(1.8rem, 9vw, 2.25rem);
   }
 
   h2 {
     max-width: 100%;
-    font-size: clamp(1.5rem, 7.5vw, 1.95rem);
+    font-size: clamp(1.4rem, 7vw, 1.85rem);
   }
 
   h3 {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
   }
 }

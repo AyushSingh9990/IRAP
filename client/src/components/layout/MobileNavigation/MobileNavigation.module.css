@@ -20,7 +20,7 @@
 
 .header {
   display: flex;
-  min-height: 4.5rem;
+  min-height: 5rem;
   align-items: center;
   justify-content: space-between;
   gap: var(--space-4);
@@ -38,10 +38,11 @@
 
 .brandLogo {
   display: block;
-  width: auto;
-  max-width: 8.5rem;
-  height: 3rem;
+  width: 6.75rem;
+  max-width: 6.75rem;
+  height: 4.45rem;
   object-fit: contain;
+  object-position: center;
 }
 
 .closeButton {

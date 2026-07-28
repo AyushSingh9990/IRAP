@@ -9,7 +9,7 @@
 
 .inner {
   display: flex;
-  min-height: 4.5rem;
+  min-height: 5rem;
   align-items: center;
   gap: clamp(0.75rem, 1.5vw, 1.25rem);
 }
@@ -24,10 +24,11 @@
 
 .brandLogo {
   display: block;
-  width: auto;
-  max-width: 9rem;
-  height: 3.2rem;
+  width: 7.25rem;
+  max-width: 7.25rem;
+  height: 4.65rem;
   object-fit: contain;
+  object-position: center;
 }
 
 .desktopNavigation {
@@ -157,12 +158,13 @@
 
 @media (max-width: 36rem) {
   .inner {
-    min-height: 4.25rem;
+    min-height: 4.65rem;
   }
 
   .brandLogo {
-    max-width: 8rem;
-    height: 2.85rem;
+    width: 6.5rem;
+    max-width: 6.5rem;
+    height: 4.05rem;
   }
 
   .menuButton {
